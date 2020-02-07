@@ -31,6 +31,7 @@ const config = {
   },
   copy: {
     patterns: [
+      { from: 'src/components/result-page/assets/empty.png', to: 'dist/weapp/components/result-page/assets/empty.png' }
     ],
     options: {
     }
