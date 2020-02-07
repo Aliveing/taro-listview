@@ -82,7 +82,7 @@ export default class Index extends Component {
           >
             {list.map((item, index) => {
               return (
-                  <View className='item skeleton-bg' key={index}>
+                <View className='item skeleton-bg' key={`skeleton-bg-${index}`}>
                     <LazyBlock current={index} className='avatar'>
                       <Image className='avatar skeleton-radius' src={item.author.avatar_url} />
                     </LazyBlock>
