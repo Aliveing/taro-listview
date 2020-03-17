@@ -24,6 +24,7 @@ interface Props {
   isEmpty?: boolean;
   isError?: boolean;
   launch?: Launch;
+  lowerThreshold?: number;
   renderEmpty?: JSX.Element;
   renderError?: JSX.Element;
   renderFooterLoading?: any;
@@ -70,6 +71,7 @@ const initialProps = {
   lazy: false,
   distanceToRefresh: 50,
   damping: 150,
+  lowerThreshold: 80,
   isLoaded: true,
   isEmpty: false,
   emptyText: '',
@@ -308,6 +310,7 @@ class ListView extends Component<Props, State> {
       hasMore,
       noMore,
       isEmpty,
+      lowerThreshold,
       emptyText,
       className,
       isError,
@@ -340,7 +343,7 @@ class ListView extends Component<Props, State> {
           className={`${className} scroll-view`}
           style={style}
           scrollY={canScrollY}
-          lowerThreshold={80}
+          lowerThreshold={lowerThreshold}
           onScrollToLower={this.handleScrollToLower}
           scrollWithAnimation
           onScroll={this.onScroll}
