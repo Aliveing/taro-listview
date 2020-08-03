@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro'
+import Taro from '@tarojs/taro';
+import React, { Component } from 'react';
 import Index from './index'
 import './app.scss';
 
@@ -29,31 +30,9 @@ if (Taro.getEnv() !== 'WEAPP') {
 
 class App extends Component {
 
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
-  config: Config = {
-    pages: [
-      'pages/index/index',
-      'pages/index',
-      'pages/index/lazy',
-      'pages/skeleton/index'
-    ],
-    window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
-  }
+  UNSAFE_componentDidMount () {}
 
-  componentDidMount () {}
-
-  componentDidShow () {}
+  UNSAFE_componentDidShow () {}
 
   componentDidHide () {}
 
@@ -68,4 +47,5 @@ class App extends Component {
   }
 }
 
-Taro.render(<App />, document.getElementById('app'))
+export default App;
+// Taro.render(<App />, document.getElementById('app'))

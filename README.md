@@ -56,7 +56,8 @@
 *错误屏中重新初始化方法与下拉刷新方法一致
 
 ```jsx
-import Taro, {Component} from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import React, { Component } from 'react';
 import {View, Image} from '@tarojs/components';
 import ListView, { LazyBlock } from 'taro-listview';
 
@@ -98,7 +99,7 @@ export default class Index extends Component {
     return {list : data, hasMore: true, isLoaded: pIndex === 1};
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.refList.fetchInit()
   }
 
@@ -174,7 +175,8 @@ export default class Index extends Component {
 | current   | 传入模块遍历后的下标    | number | null | true |
 
 ```jsx
-import Taro, {Component} from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import React, { Component } from 'react';
 import {View, Image} from '@tarojs/components';
 import ListView, { LazyBlock } from 'taro-listView';
 
@@ -201,7 +203,7 @@ export default class Index extends Component {
     return {list : data, hasMore: true, isLoaded: pIndex === 1};
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.getData()
   }
 

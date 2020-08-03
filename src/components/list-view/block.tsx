@@ -1,4 +1,5 @@
-import Taro, {Component} from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import React, { Component } from 'react';
 import {View} from '@tarojs/components';
 import './block.scss'
 import storage from "../../utils/storage";
@@ -33,7 +34,7 @@ class LazyImage extends Component<Props, State> {
     scrollCur: [0]
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.lazyItem = storage.get('lazyBox')[storage.get('lazyBox').length -1];
     this.bindTextListener();
   }

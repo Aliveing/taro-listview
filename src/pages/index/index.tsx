@@ -1,4 +1,5 @@
-import Taro, {Component} from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import React, { Component } from 'react';
 import {View, Image} from '@tarojs/components';
 import ListView, { LazyBlock } from '../../index';
 
@@ -38,7 +39,7 @@ export default class Index extends Component {
     return {list : data, hasMore: true, isLoaded: pIndex === 1};
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.refList.fetchInit()
   }
 

@@ -1,4 +1,5 @@
-import Taro, {Component} from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import React, { Component } from 'react';
 import {View, Image} from '@tarojs/components';
 import ListView from '../../components/list-view';
 import LazyBlock from '../../components/list-view/block';
@@ -22,7 +23,7 @@ export default class Index extends Component {
     return {list : data, hasMore: true };
   };
 
-  componentDidMount = async () => {
+  UNSAFE_componentDidMount = async () => {
     const res = await this.getData()
     this.setState(res)
   }

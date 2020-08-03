@@ -1,4 +1,5 @@
-import Taro, {Component} from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import React, { Component } from 'react';
 import {ScrollView, View } from '@tarojs/components';
 import Skeleton from '../skeleton';
 import Loading from '../loading';
@@ -127,7 +128,7 @@ class ListView extends Component<Props, State> {
 
   touchScrollTop = 0;
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     this.moveBox(0);
     if (this.props.lazy) {
       Taro.createSelectorQuery().in(this.$scope)

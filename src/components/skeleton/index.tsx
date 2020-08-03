@@ -1,4 +1,5 @@
-import Taro, { Component } from '@tarojs/taro';
+import Taro from '@tarojs/taro';
+import React, { Component } from 'react';
 import { View } from '@tarojs/components';
 import './index.scss';
 
@@ -34,7 +35,7 @@ class Skeleton extends Component<Props, State> {
     listRadius: [],
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     if (Taro.getEnv() === 'WEAPP') {
       this.weappSkl();
     } else {
